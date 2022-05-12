@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:insta_firebase/responsive/mobile_screen_layout.dart';
 import 'package:insta_firebase/responsive/responsive.dart';
 import 'package:insta_firebase/responsive/web_screen_layout.dart';
+import 'package:insta_firebase/screens/login_scree.dart';
+import 'package:insta_firebase/screens/signup_screen.dart';
 import 'package:insta_firebase/utils/colors.dart';
 
 void main() async {
@@ -29,10 +31,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: ResponsiveLayout(
-        webScreenLayout: WebScreenLayout(),
-        mobileScreenLayout: MobileScreenLayout(),
-      ),
+      home: SignInScreen(),
     );
   }
 }
+
+// ResponsiveLayout(
+//         webScreenLayout: WebScreenLayout(),
+//         mobileScreenLayout: MobileScreenLayout(),
