@@ -1,10 +1,20 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:insta_firebase/responsive/mobile_screen_layout.dart';
 import 'package:insta_firebase/responsive/responsive.dart';
 import 'package:insta_firebase/responsive/web_screen_layout.dart';
 import 'package:insta_firebase/utils/colors.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        // options: FirebaseOptions(apiKey: apiKey, appId: appId, messagingSenderId: messagingSenderId, projectId: projectId)
+        );
+  } else {
+    await Firebase.initializeApp();
+  }
   runApp(const MyApp());
 }
 
