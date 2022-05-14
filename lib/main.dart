@@ -12,8 +12,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
-        // options: FirebaseOptions(apiKey: apiKey, appId: appId, messagingSenderId: messagingSenderId, projectId: projectId)
-        );
+        options: const FirebaseOptions(
+      apiKey: 'AIzaSyBYduveh0PAW_OMMtU2bG7L85FBXZtFfBQ',
+      appId: "1:687164908305:web:46d2293c249a0bdb51e2b0",
+      messagingSenderId: "687164908305",
+      projectId: "insta-firebase-d23c8",
+      authDomain: "insta-firebase-d23c8.firebaseapp.com",
+      storageBucket: "insta-firebase-d23c8.appspot.com",
+    ));
   } else {
     await Firebase.initializeApp();
   }
